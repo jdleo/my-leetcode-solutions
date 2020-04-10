@@ -34,7 +34,7 @@ const sortString = (s) => {
         res.push(String.fromCharCode(pos + 97));
 
         // decrease occurrence
-        occ[pos] -= 1;
+        occ[pos]--;
       }
     }
 
