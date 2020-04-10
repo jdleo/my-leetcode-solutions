@@ -8,13 +8,13 @@ let storage = {};
  * @return {string}
  */
 const encode = (longUrl) => {
-    // generate random shortcode
-    const shortcode = `${Math.floor(Math.random() * 50000000)}`;
+  // generate random shortcode
+  const shortcode = `${Math.floor(Math.random() * 50000000)}`;
 
-    // add to data store
-    storage[shortcode] = longUrl;
-    
-    return shortcode;
+  // add to data store
+  storage[shortcode] = longUrl;
+
+  return shortcode;
 };
 
 /**
@@ -24,6 +24,6 @@ const encode = (longUrl) => {
  * @return {string}
  */
 var decode = (shortUrl) => {
-    // retrieve from data store
-    return storage[shortUrl];
+  // retrieve from data store
+  return storage[shortUrl];
 };

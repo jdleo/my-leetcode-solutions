@@ -2,6 +2,9 @@
  * @param {string} s
  * @return {string}
  */
-var sortString = function(s) {
-    
+const sortString = (s) => {
+    // result string
+    let res = '';
+
+    return res;
 };
