@@ -6,9 +6,6 @@ const sumZero = (n) => {
   // result (start with single 0)
   let res = [0];
 
-  // counter for how many numbers weve added
-  let i = 0;
-
   // negative and positive pointer
   let neg = -1;
   let pos = 1;
