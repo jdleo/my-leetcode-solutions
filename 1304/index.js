@@ -20,7 +20,7 @@ const sumZero = (n) => {
       // push neg to array, and decrement neg
       res.push(neg--);
     } else {
-      // push pos to array, and incremet pos
+      // push pos to array, and increment pos
       res.push(pos++);
     }
   }
