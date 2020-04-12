@@ -7,8 +7,12 @@ const getAllElements = (root1, root2) => {
   // res array
   const res = [];
 
-  // call recursive helper function
-  inorder(root1, root2, res);
+  // inorder traverse both trees
+  inorder(root1, res);
+  inorder(root2, res);
+
+  // sort
+  res.sort((a, b) => a - b);
 
   // result
   return res;
@@ -16,31 +20,15 @@ const getAllElements = (root1, root2) => {
 
 /**
  * recursive inorder traversal
- * @param {TreeNode} root1
- * @param {TreeNode} root2
+ * @param {TreeNode} root
  * @param {number[]} arr
  * @return {void}
  */
-const inorder = (root1, root2, arr) => {
-  // base cases
-  if (!root1 && !root2) return;
+const inorder = (root, arr) => {
+  // base case
+  if (!root) return;
 
-  // if either is null, make the value something very large
-  const val1 = root1 != null ? root1.val : Infinity;
-  const val2 = root2 != null ? root2.val : Infinity;
-
-  console.log(val1, val2);
-
-  // compare
-  if (val1 < val2) {
-    // do regular inorder, but traverse root1
-    inorder(root1.left, root2, arr);
-    arr.push(val1);
-    inorder(root1.right, root2, arr);
-  } else {
-    // do regular inorder, but traverse root2
-    inorder(root1, root2.left, arr);
-    arr.push(val2);
-    inorder(root2, root2.right, arr);
-  }
+  inorder(root.left, arr);
+  arr.push(root.val);
+  inorder(root.right, arr);
 };
