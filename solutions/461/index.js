@@ -4,18 +4,20 @@
  * @return {number}
  */
 const hammingDistance = (x, y) => {
-  // xor both numbers and turn to binary string
-  const xor = (x ^ y).toString(2);
+  // xor both numbers and store in x
+  x = x ^ y;
 
-  // count
-  let count = 0;
+  // store count in y
+  y = 0;
 
-  // iterate thru xor string
-  for (let i = 0; i < xor.length; i++) {
-    // xor yields a 1 bit when bits differ
-    // so add to count if char is 1
-    if (xor.charAt(i) === '1') count++;
+  // keep going until x is 0
+  while (x > 0) {
+    // add last bit to y
+    y += x & 1;
+
+    // right shift
+    x >>= 1;
   }
 
-  return count;
+  return y;
 };
