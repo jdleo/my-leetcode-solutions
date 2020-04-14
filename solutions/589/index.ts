@@ -1,3 +1,5 @@
+export {};
+
 // typed interface for Node
 interface Node {
     val: number;
