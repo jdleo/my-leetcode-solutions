@@ -1,27 +1,17 @@
-// typed interface for Node
-interface Node {
-    val: number;
-    children: Node[];
-}
-
-const preorder: (root: Node) => number[] = (root) => {
+const preorder = (root) => {
     // to hold path
-    const path: number[] = [];
-
+    const path = [];
     // call dfs
     dfs(root, path);
-
     return path;
 };
-
 // dfs helper function
-const dfs: (root: Node, path: number[]) => void = (root, path) => {
+const dfs = (root, path) => {
     // base case
-    if (!root) return;
-
+    if (!root)
+        return;
     // log to path, here (preorder)
     path.push(root.val);
-
     // go through children in node
     for (const child of root.children) {
         // call dfs
