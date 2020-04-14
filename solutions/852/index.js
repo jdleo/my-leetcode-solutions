@@ -9,10 +9,12 @@ function peakIndexInMountainArray(A) {
         // check if this is peak
         if (A[mid] > A[mid - 1] && A[mid] > A[mid + 1]) {
             return mid;
-        } else if (A[mid] > A[mid - 1]) {
+        }
+        else if (A[mid] > A[mid - 1]) {
             // search right half
             lo = mid;
-        } else {
+        }
+        else {
             // search left half
             hi = mid;
         }
