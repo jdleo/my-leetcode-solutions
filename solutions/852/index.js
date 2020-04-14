@@ -1,13 +1,12 @@
-function peakIndexInMountainArray(A: number[]): number {
+function peakIndexInMountainArray(A) {
     // lo and hi pointers for binary search
-    let lo: number = 0;
-    let hi: number = A.length - 1;
-
+    let lo = 0;
+    let hi = A.length - 1;
     // go until pointers meet
     while (lo < hi) {
-        // get midpoint
-        const mid: number = Math.floor((hi + lo) / 2);
-
+        // get mid
+        const mid = Math.floor((hi + lo) / 2);
+        console.log(mid);
         // check if this is peak
         if (A[mid] > A[mid - 1] && A[mid] > A[mid + 1]) {
             return mid;
@@ -19,7 +18,6 @@ function peakIndexInMountainArray(A: number[]): number {
             hi = mid;
         }
     }
-
     // default
     return 0;
 }
