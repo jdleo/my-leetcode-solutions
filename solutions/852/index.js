@@ -4,9 +4,8 @@ function peakIndexInMountainArray(A) {
     let hi = A.length - 1;
     // go until pointers meet
     while (lo < hi) {
-        // get mid
+        // get midpoint
         const mid = Math.floor((hi + lo) / 2);
-        console.log(mid);
         // check if this is peak
         if (A[mid] > A[mid - 1] && A[mid] > A[mid + 1]) {
             return mid;
