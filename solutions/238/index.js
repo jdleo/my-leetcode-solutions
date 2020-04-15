@@ -1,7 +1,6 @@
 function productExceptSelf(nums) {
     // left and right running products, and array length
-    let left = 1,
-        right = 1;
+    let left = 1, right = 1;
     // result array (fill with 1s)
     const res = Array(nums.length).fill(1);
     // iterate thru nums
