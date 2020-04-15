@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const preorder = (root) => {
     // to hold path
     const path = [];
