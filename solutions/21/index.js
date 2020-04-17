@@ -12,7 +12,8 @@ function mergeTwoLists(l1, l2) {
             // add l1 to next
             dummy.next = new ListNode(v1);
             l1 = l1.next;
-        } else {
+        }
+        else {
             // add l2 to next
             dummy.next = new ListNode(v2);
             l2 = l2.next;
