@@ -2,4 +2,4 @@
 
 Each folder is the corresponding problem ID on Leetcode.
 
-**Completed Problems:** `58`
+**Completed Problems:** `65`
