@@ -1,10 +1,8 @@
-function findOcurrences(text: string, first: string, second: string) {
+function findOcurrences(text, first, second) {
     // split
-    const txt: string[] = text.split(' ');
-
+    const txt = text.split(' ');
     // res
-    const res: string[] = [];
-
+    const res = [];
     // iterate thru array of words
     for (let i = 2; i < txt.length; i++) {
         // check if last 2 are first and second
@@ -12,6 +10,5 @@ function findOcurrences(text: string, first: string, second: string) {
             res.push(txt[i]);
         }
     }
-
     return res;
 }
