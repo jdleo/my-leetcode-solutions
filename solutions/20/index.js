@@ -1,7 +1,6 @@
-function isValid(s: string): boolean {
+function isValid(s) {
     // stack to hold characters
-    const stack: string[] = [];
-
+    const stack = [];
     // iterate through string
     for (let i = 0; i < s.length; i++) {
         if (s.charAt(i) === ')') {
@@ -18,7 +17,6 @@ function isValid(s: string): boolean {
             stack.push(s.charAt(i));
         }
     }
-
     // if there's anything left in stack, its invalid
     return stack.length === 0;
 }
