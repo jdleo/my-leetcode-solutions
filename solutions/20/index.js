@@ -5,14 +5,20 @@ function isValid(s) {
     for (let i = 0; i < s.length; i++) {
         if (s.charAt(i) === ')') {
             // check invalid
-            if (stack.pop() !== '(') return false;
-        } else if (s.charAt(i) === ']') {
+            if (stack.pop() !== '(')
+                return false;
+        }
+        else if (s.charAt(i) === ']') {
             // check invalid invalid
-            if (stack.pop() !== '[') return false;
-        } else if (s.charAt(i) === '}') {
+            if (stack.pop() !== '[')
+                return false;
+        }
+        else if (s.charAt(i) === '}') {
             // check invalid
-            if (stack.pop() !== '{') return false;
-        } else {
+            if (stack.pop() !== '{')
+                return false;
+        }
+        else {
             // push to stack as normal
             stack.push(s.charAt(i));
         }
