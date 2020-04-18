@@ -1,9 +1,8 @@
-function findRelativeRanks(nums: number[]): string[] {
+function findRelativeRanks(nums) {
     // res
-    const res: string[] = Array(nums.length).fill('');
+    const res = Array(nums.length).fill('');
     // array of objects {num, index}[]
-    const positions: { num: number; index: number }[] = [];
-
+    const positions = [];
     // iterate thru nums
     for (let i = 0; i < nums.length; i++) {
         // push this num, and the index its found at
@@ -12,27 +11,27 @@ function findRelativeRanks(nums: number[]): string[] {
             index: i,
         });
     }
-
     // sort positions desc based on scores (nums)
     positions.sort((a, b) => b.num - a.num);
-
     // iterate thru positions
     for (let i = 0; i < positions.length; i++) {
         // check medals
         if (i === 0) {
             // gold
             res[positions[i].index] = 'Gold Medal';
-        } else if (i === 1) {
+        }
+        else if (i === 1) {
             // silver
             res[positions[i].index] = 'Silver Medal';
-        } else if (i === 2) {
+        }
+        else if (i === 2) {
             // bronze
             res[positions[i].index] = 'Bronze Medal';
-        } else {
+        }
+        else {
             // just index as rank
             res[positions[i].index] = (i + 1).toString();
         }
     }
-
     return res;
 }
