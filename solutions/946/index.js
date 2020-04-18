@@ -1,14 +1,9 @@
-function validateStackSequences(
-    pushed: number[],
-    popped: number[]
-): boolean {
+function validateStackSequences(pushed, popped) {
     // 'stack'
-    const stack: number[] = [];
-
+    const stack = [];
     // pointers for both stacks
-    let i: number = 0;
-    let j: number = 0;
-
+    let i = 0;
+    let j = 0;
     // go while there are still things to pop/push
     while (i < pushed.length || j < popped.length) {
         // check if stack not empty
@@ -20,15 +15,16 @@ function validateStackSequences(
                 j++;
                 // continue loop
                 continue;
-            } else {
+            }
+            else {
                 // check if i reached end of pushed
-                if (i >= pushed.length) return false;
+                if (i >= pushed.length)
+                    return false;
             }
         }
         // just push value to be pushed and increment
         stack.push(pushed[i++]);
     }
-
     // valid
     return true;
 }
