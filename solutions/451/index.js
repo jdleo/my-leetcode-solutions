@@ -1,26 +1,26 @@
-/**
- * @param {string} s
- * @return {string}
- */
 function frequencySort(s) {
-    // char counts
+    // make char array of s
+    const S = s.split('');
+    // counts object {character: count}
     const counts = {};
-    // result str
-    const res = '';
-    // iterate thru S, incrementing char counts
-    for (let i = 0; i < s.length; i++) {
-        // check if in counts
-        if (s.charAt(i) in counts) {
-            // increment
-            counts[s.charAt(i)]++;
+    // iterate thru S array
+    for (let i = 0; i < S.length; i++) {
+        // increment char count
+        if (S[i] in counts)
+            counts[S[i]] = 1;
+        counts[S[i]]++;
+    }
+    // sort S array with custom comparator
+    S.sort((a, b) => {
+        // if counts are not equal, sort ascending
+        if (counts[a] != counts[b]) {
+            return counts[b] - counts[a];
         }
         else {
-            // set count to 1
-            counts[s.charAt(i)] = 1;
+            // do this to ensure characters are clumped together
+            return b.charCodeAt(0) - a.charCodeAt(0);
         }
-    }
-    // get items in counts
-    const items = Object.items(counts);
+    });
     // return S array joined
-    return res;
+    return S.join('');
 }
