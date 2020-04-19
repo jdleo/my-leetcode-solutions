@@ -12,6 +12,7 @@ function matrixReshape(nums, r, c) {
         // push empty array
         res.push([]);
         for (let j = 0; j < c; j++, k++) {
+            // value at this index is kth value in nums
             res[i].push(nums[Math.floor(k / n)][k % n]);
         }
     }
