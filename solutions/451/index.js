@@ -6,7 +6,7 @@ function frequencySort(s) {
     // iterate thru S array
     for (let i = 0; i < S.length; i++) {
         // increment char count
-        if (S[i] in counts)
+        if (!(S[i] in counts))
             counts[S[i]] = 1;
         counts[S[i]]++;
     }
