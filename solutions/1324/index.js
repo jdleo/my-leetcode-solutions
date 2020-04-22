@@ -1,18 +1,14 @@
-function printVertically(s: string): string[] {
+function printVertically(s) {
     // get words space seperated
-    const S: string[] = s.split(' ');
-
+    const S = s.split(' ');
     // to hold longest string length
-    let maxLength: number = 0;
-
+    let maxLength = 0;
     // iterate 1st pass thru array and find longest string length
     for (let i = 0; i < S.length; i++) {
         maxLength = Math.max(maxLength, S[i].length);
     }
-
     // result array (max length empty strings)
-    const res: string[] = Array(maxLength).fill('');
-
+    const res = Array(maxLength).fill('');
     // iterate 2nd pass thru array
     for (let i = 0; i < S.length; i++) {
         // go from 0 to maxLength - 1
@@ -23,11 +19,9 @@ function printVertically(s: string): string[] {
                 S[i].length > j ? S[i].charAt(j) : ' ';
         }
     }
-
     // 3rd pass to trim whitespace
     for (let i = 0; i < res.length; i++) {
         res[i] = res[i].trimRight();
     }
-
     return res;
 }
