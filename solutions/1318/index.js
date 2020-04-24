@@ -1,7 +1,6 @@
-function minFlips(a: number, b: number, c: number): number {
+function minFlips(a, b, c) {
     // number of flips
-    let flips: number = 0;
-
+    let flips = 0;
     // keep going until they're all zero
     while (a != 0 || b != 0 || c != 0) {
         // if (a&1)|(b&1) and c&1 differ, it requires a flip
@@ -13,6 +12,5 @@ function minFlips(a: number, b: number, c: number): number {
         b >>= 1;
         c >>= 1;
     }
-
     return flips;
 }
