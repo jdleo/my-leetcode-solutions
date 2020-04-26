@@ -1,8 +1,7 @@
-function countServers(grid: number[][]): number {
+function countServers(grid) {
     // arrays representing rows and columns machine counts
-    const rows: number[] = Array(grid.length).fill(0);
-    const cols: number[] = Array(grid[0].length).fill(0);
-
+    const rows = Array(grid.length).fill(0);
+    const cols = Array(grid[0].length).fill(0);
     // iterate thru grid
     for (let i = 0; i < grid.length; i++) {
         for (let j = 0; j < grid[i].length; j++) {
@@ -14,10 +13,8 @@ function countServers(grid: number[][]): number {
             }
         }
     }
-
     // connected machine count
-    let m: number = 0;
-
+    let m = 0;
     // iterate thru grid again
     for (let i = 0; i < grid.length; i++) {
         for (let j = 0; j < grid[i].length; j++) {
@@ -29,6 +26,5 @@ function countServers(grid: number[][]): number {
                 : false;
         }
     }
-
     return m;
 }
