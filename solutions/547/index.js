@@ -1,10 +1,8 @@
-function findCircleNum(M: number[][]): number {
+function findCircleNum(M) {
     // visited set
-    const visited: Set<number> = new Set();
-
+    const visited = new Set();
     // friend circles count
-    let circles: number = 0;
-
+    let circles = 0;
     // iterate thru matrix
     for (let i = 0; i < M.length; i++) {
         // check if this friend has been visited before
@@ -15,11 +13,9 @@ function findCircleNum(M: number[][]): number {
             circles++;
         }
     }
-
     return circles;
-
     // helper method to do dfs traversal thru M
-    function dfs(i: number): void {
+    function dfs(i) {
         // go thru this friend's friends
         for (let j = 0; j < M.length; j++) {
             // check if this is a friend, and not visited before
