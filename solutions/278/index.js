@@ -1,7 +1,5 @@
-function solution(
-    isBadVersion: (n: number) => boolean
-): (n: number) => number {
-    return function (n: number): number {
+function solution(isBadVersion) {
+    return function (n) {
         // go from n to 1
         for (let i = n; i >= 1; i--) {
             // check if good version
@@ -10,7 +8,6 @@ function solution(
                 return i + 1;
             }
         }
-
         // none found
         return 1;
     };
