@@ -1,14 +1,23 @@
 function solution(isBadVersion) {
     return function (n) {
-        // go from n to 1
-        for (let i = n; i >= 1; i--) {
-            // check if good version
-            if (!isBadVersion(i)) {
-                // return i+1
-                return i + 1;
+        // left and right pointers for binary search
+        let l = 1;
+        let r = n;
+        // go until pointers meet
+        while (l <= r) {
+            // calculate mid point
+            const mid = Math.floor((l + r) << 1);
+            // check if mid is a bad version
+            if (isBadVersion(mid)) {
+                // we have to search left
+                r = mid - 1;
+            }
+            else {
+                // we have to search rightt
+                l = mid + 1;
             }
         }
-        // none found
-        return 1;
+        // result will be at left pointer
+        return l;
     };
 }
