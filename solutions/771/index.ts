@@ -1,8 +1,10 @@
-function numJewelsInStones(J, S) {
+function numJewelsInStones(J: string, S: string): number {
     // convert jewels to set of chars
-    const set = new Set(J);
+    const set: Set<string> = new Set(J);
+
     // count
-    let count = 0;
+    let count: number = 0;
+
     // iterate thru S
     for (let i = 0; i < S.length; i++) {
         // check if this char is in set
@@ -10,5 +12,6 @@ function numJewelsInStones(J, S) {
             count++;
         }
     }
+
     return count;
 }
