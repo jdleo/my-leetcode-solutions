@@ -6,7 +6,7 @@ function solution(isBadVersion) {
         // go until pointers meet
         while (l <= r) {
             // calculate mid point
-            const mid = Math.floor((l + r) << 1);
+            const mid = Math.floor((l + r) / 2);
             // check if mid is a bad version
             if (isBadVersion(mid)) {
                 // we have to search left
