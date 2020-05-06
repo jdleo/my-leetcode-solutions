@@ -11,10 +11,8 @@ function canConstruct(ransomNote, magazine) {
     // iterate thru ransom note
     for (let i = 0; i < ransomNote.length; i++) {
         // if char not in map, or count is <= 0, break ret false
-        if (
-            !map[ransomNote.charAt(i)] ||
-            map[ransomNote.charAt(i)]-- <= 0
-        ) {
+        if (!map[ransomNote.charAt(i)] ||
+            map[ransomNote.charAt(i)]-- <= 0) {
             return false;
         }
     }
