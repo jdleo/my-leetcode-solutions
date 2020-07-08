@@ -1,7 +1,4 @@
-function kidsWithCandies(
-    candies: number[],
-    extraCandies: number
-): boolean[] {
+function kidsWithCandies(candies: number[], extraCandies: number): boolean[] {
     // for max value
     let max: number = 0;
 
