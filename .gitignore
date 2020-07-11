@@ -1,4 +1,4 @@
 node_modules
 .DS_Store
 test.py
-np.py
+*.py
