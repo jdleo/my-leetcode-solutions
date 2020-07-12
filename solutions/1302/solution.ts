@@ -1,3 +1,9 @@
+interface TreeNode {
+    val: number;
+    left: TreeNode | null;
+    right: TreeNode | null;
+}
+
 function deepestLeavesSum(root: TreeNode | null): number {
     // total sum
     let sum: number = 0;
