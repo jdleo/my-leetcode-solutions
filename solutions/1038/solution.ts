@@ -5,20 +5,25 @@ interface TreeNode {
     right: TreeNode | null;
 }
 
-// running sum
-let sum: number = 0;
-
 function bstToGst(root: TreeNode | null): TreeNode | null {
-    // base case
-    if (!root) return null;
+    // running sum
+    let sum: number = 0;
 
-    // go right
-    if (root.right) bstToGst(root.right);
+    // recursive helper function
+    function inorder(root: TreeNode | null): TreeNode | null {
+        // base case
+        if (!root) return null;
 
-    sum = root.val = sum + root.val;
+        // go right
+        if (root.right) bstToGst(root.right);
 
-    // go left
-    if (root.left) bstToGst(root.left);
+        sum = root.val = sum + root.val;
 
-    return root;
+        // go left
+        if (root.left) bstToGst(root.left);
+
+        return root;
+    }
+
+    return inorder(root);
 }
