@@ -2,6 +2,6 @@
 
 Each folder is the corresponding problem ID on Leetcode.
 
-**Completed Problems:** `20`
+**Completed Problems:** `24`
 
 All problems are solved in Typescript.
