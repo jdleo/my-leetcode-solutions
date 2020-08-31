@@ -9,6 +9,6 @@ const encode = (longUrl) => {
 };
 
 const decode = (shortUrl) => {
-    // retrieve long url from short code
+    // retrieve long url from shortcode
     return store.get(shortUrl);
 };
