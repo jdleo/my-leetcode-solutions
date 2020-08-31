@@ -4,7 +4,7 @@ function countGoodTriplets(
     b: number,
     c: number
 ): number {
-    // number of good triplets
+    // num of good triplets
     let n = 0;
 
     // iterate thru array n^3
