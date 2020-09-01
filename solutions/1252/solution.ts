@@ -8,22 +8,20 @@ function oddCells(n: number, m: number, indices: number[][]): number {
         .map(() => Array(m).fill(0));
 
     // iterate through indices
-    for (let n = 0; n < indices.length; n++) {
+    indices.forEach((index) => {
         // get i, j
-        const [i, j] = indices[n];
+        const [row, col] = index;
 
-        // increment every value in same row by 1
-        for (let k = 0; k < m; k++) {
-            mat[i][k]++;
+        // increment all in same row by 1
+        for (let i = 0; i < m; i++) {
+            mat[row][i]++;
         }
 
-        // increment every value in same col by 1
-        for (let k = 0; k < n; k++) {
-            mat[k][j]++;
+        // increment all in same col by 1
+        for (let i = 0; i < n; i++) {
+            mat[i][col]++;
         }
-
-        console.log(mat);
-    }
+    });
 
     // loop back thru matrix, counting odds
     for (let i = 0; i < n; i++) {
