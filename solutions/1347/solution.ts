@@ -21,9 +21,9 @@ function minSteps(s: string, t: string): number {
         steps += Math.abs(balance[i]);
     }
 
-    // note, we divide by 2 because for every character 'swap',
-    // here's why: say we have strings a and b. {a:1} and {b:1} counts
-    // if we swap a to b, not only does a become {a:0} but b becomes {b:2}
+    // note, we divide by 2 because, say we have strings s = 'a' and t = 'b'. 
+    // counts would be s = {a:1} and t = {b:1}
+    // if we swap a to b, not only does a's count become {a:0} but b becomes {b:2}
     // so each swap has 2x the magnitude
     return steps / 2;
 }
