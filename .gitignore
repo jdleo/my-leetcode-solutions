@@ -1,4 +1,9 @@
+# npm
 node_modules
+
+# mac
 .DS_Store
-test.py
-*.py
+
+# helper scripts for myself to create and finish new problems by id
+d.py
+np.py
