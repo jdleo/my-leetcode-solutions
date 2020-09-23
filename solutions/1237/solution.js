@@ -13,15 +13,28 @@ var findSolution = function (customfunction, z) {
     while (i < 1001) {
         // pointer for second variable
         let j = 1;
-        // last calculated output (z)
-        let last = Number.MIN_SAFE_INTEGER;
-        // go until 1000, or until we met z (it will just keep increasing, so stop here)
-        while (j < 1001 && last < z) {
-            // calculate new 'z'
-            last = customfunction.f(i, j);
-            // check if matches target
-            if (last === z) sol.push([i, j]);
-            j++;
+        // left and right pointers for binary search
+        let lo = 1,
+            hi = 1000;
+
+        // go until pointers meet
+        while (lo < hi) {
+            // get mid point
+            const mid = (lo + hi) >> 1;
+            // calculate function
+            const cur = customfunction.f(i, mid);
+            // check if function of mid point is less than z
+            if (cur < z) {
+                // we need to search right half
+                lo = mid + 1;
+            } else if (cur > z) {
+                // we need to search left half
+                hi = mid;
+            } else {
+                // we found a solution for z
+                sol.push([i, mid]);
+                break;
+            }
         }
         i++;
     }
