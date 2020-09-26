@@ -5,7 +5,7 @@ function maxAncestorDiff(root: TreeNode | null, max = 0, min = 10 ** 6): number 
     max = Math.max(max, root.val);
     min = Math.min(min, root.val);
 
-    // return max of left and right subtrees
+    // return the max difference of left and right subtrees
     return Math.max(
         maxAncestorDiff(root.left, max, min),
         maxAncestorDiff(root.right, max, min)
